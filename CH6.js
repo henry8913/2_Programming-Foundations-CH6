@@ -20,42 +20,40 @@
 //ESERCIZI IN JS
 // ESERCIZIO 7: Scrivi una funzione per cambiare il contenuto del tag h1 in qualcos'altro
 
-function cambiaTitolo(nuovoTitolo) {
+function cambiaTitolo() {
+    const nuovoTitolo = "Black Friday 2024: Offerte e Sconti Migliori";
     const titolo = document.querySelector('h1');
     titolo.textContent = nuovoTitolo;
     console.log("Il nuovo titolo è: " + nuovoTitolo);
 }
 
-cambiaTitolo("Black Friday 2024: Offerte e Sconti Migliori");
-
 //___________________//___________________//___________________//___________________//___________________//___________________//
 
 // ESERCIZIO 8: Scrivi una funzione per cambiare il colore di background della pagina
 
-function cambiaColore(nuovoColore) {
+function cambiaColore() {
+    const nuovoColore = "orange";
     document.body.style.backgroundColor = nuovoColore;
     console.log("Il nuovo colore background è: " + nuovoColore);
 }
-
-cambiaColore("orange")
 
 //___________________//___________________//___________________//___________________//___________________//___________________//
 
 // ESERCIZIO 9: Scrivi una funzione per cambiare l'indirizzo presente nel futuro in un altro, fittizio
 
-function cambiaIndirizzo(nuovoIndirizzo) {
+function cambiaIndirizzo() {
+    const nuovoIndirizzo = "Indirizzo: 1600 Pennsylvania Avenue NW, Washington, DC 20500, USA";
     const indirizzo = document.querySelector('h4');
     indirizzo.textContent = nuovoIndirizzo;
-    console.log("Il nuovo indirizzo è: " + nuovoIndirizzo)
+    console.log("Il nuovo indirizzo è: " + nuovoIndirizzo);
 }
-
-cambiaIndirizzo("Indirizzo: 1600 Pennsylvania Avenue NW, Washington, DC 20500, USA")
 
 //___________________//___________________//___________________//___________________//___________________//___________________//
 
 // ESERCIZIO 10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
 
-function aggiungiClasseLinkAmazon(classe) {
+function aggiungiClasseLinkAmazon() {
+    const classe = "amazon-link";
     const linkAmazon = document.querySelectorAll('table a[href*="amazon.it"]');
     linkAmazon.forEach(link => {
         link.classList.add(classe);
@@ -63,13 +61,12 @@ function aggiungiClasseLinkAmazon(classe) {
     console.log(`Classe "${classe}" aggiunta a ${linkAmazon.length} link Amazon.`);
 }
 
-aggiungiClasseLinkAmazon("amazon-link");
-
 //___________________//___________________//___________________//___________________//___________________//___________________//
 
 // ESERCIZIO 11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini della tabella; questa classe deve modificare la visibilità/invisibilità dell'immagine
 
-function toggleClasseImmagini(classe) {
+function toggleClasseImmagini() {
+    const classe = "nascondi";
     const immagini = document.querySelectorAll('table img');
     immagini.forEach(immagine => {
         immagine.classList.toggle(classe);
@@ -77,15 +74,9 @@ function toggleClasseImmagini(classe) {
     console.log(`La classe "${classe}" è stata alternata per tutte le immagini.`);
 }
 
-toggleClasseImmagini("nascondi");
-
 //___________________//___________________//___________________//___________________//___________________//___________________//
 
 // ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, ogni volta che viene invocata
-
-document.addEventListener("DOMContentLoaded", () => {
-    cambiaColorePrezzi();
-});
 
 function cambiaColorePrezzi() {
     const prezzi = document.querySelectorAll('table tbody td:nth-child(4)');
@@ -93,7 +84,7 @@ function cambiaColorePrezzi() {
         const coloreCasuale = generaColoreCasuale();
         prezzo.style.color = coloreCasuale;
     });
-    console.log("I colori dei prezzi sono stati aggiornati automaticamente!");
+    console.log("I colori dei prezzi sono stati aggiornati!");
 }
 
 function generaColoreCasuale() {
